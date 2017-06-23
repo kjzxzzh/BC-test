@@ -138,7 +138,7 @@
                       			</li>
                       			<li>
 							<div class="login-b-c">
-                      		<a href="tologin.html">已有账号登录</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#">忘记登录密码？</a>
+                      		<a href="/login">已有账号登录</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#">忘记登录密码？</a>
                       	    </div>
                                 </li>
                       			<li class="login-x">

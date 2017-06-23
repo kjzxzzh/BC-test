@@ -15,8 +15,8 @@ public interface UserMapper {
 	public User selectUserById(int id);
 
 	
-	@Insert("insert into user(id,username,mobile,register_time,last_login_time,password) "
-			+ "values (#{id}, #{name},#{mobile},#{regesterTime},#{lastLoginTime},#{password})")
+	@Insert("insert into user(id,username,mobile,register_time,last_login_time,password,salt,state) "
+			+ "values (#{id}, #{username},#{mobile},#{regesterTime},#{lastLoginTime},#{password}),#{salt}),#{state})")
 	@ResultType(Boolean.class)
 	public boolean InsertUser(User user);
 	
@@ -24,7 +24,7 @@ public interface UserMapper {
 	@ResultType(User.class)
 	public User selectUserByUser(User user);
 	
-	@Select("select * from user where username = #{userName}")
+	@Select("select * from user where username = #{username}")
 	@ResultType(User.class)
 	public User selectUserByUsername(String userName);
 	

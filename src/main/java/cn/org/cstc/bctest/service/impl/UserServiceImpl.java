@@ -28,7 +28,7 @@ public class UserServiceImpl implements IUserService{
 	}
 	
 	public int saveUser(User user) {
-		if(getUserByUsername(user.getUserName()) != null)
+		if(getUserByUsername(user.getUsername()) != null)
 			return -1;
 		Date date = new Date();//获得系统时间.
 		user.setLastLoginTime(date);
