@@ -1,19 +1,10 @@
 var Nowkey = "";
 var Nowpage = 1;
 var PageSum;
-//function getPageSum(){
-//	$.ajax({
-//		url: "http://localhost:8080/account/getPageSum",
-//		type: "get",
-//		 dataType: 'json', 
-//		data: {key:Nowkey},
-//		success: function(result){
-//			PageSum = result.pageSum;
-//			}
-//		});
-//}
+
 function getCaseList(page){
 	key = $("#nowKey").val();
+	
 	$.ajax({
 		url: "http://localhost:8080/account/getCaseList",
 		type: "get",

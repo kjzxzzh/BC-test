@@ -27,7 +27,6 @@ public class CaseController {
 	private IcaseService caseService;
 	
 	@RequestMapping(value="/account/getCaseList")
-//	public String getCaseList(Model model ){
 	public String getCaseList(int page,String key,Model model ){
 		System.out.println("获取第"+page+"页用例,"+"关键字为"+key);
 		
