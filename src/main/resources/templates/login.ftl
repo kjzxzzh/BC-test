@@ -112,7 +112,6 @@
                       			<!--用户名-->
                       			<li>
                       				<label for="username" >用&nbsp;&nbsp;户&nbsp;&nbsp;名：</label><input type="text" id="username" name="username" <#if username??>value="${username}</#if>"/>
-                      				<h1 id="m-tip"><#if errorCode?? && errorCode == 'userNotExists'>${errorMsg}</#if></h1>
                       			</li>                     			
                       			<!--密码-->
                       			<li>

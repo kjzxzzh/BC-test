@@ -6,6 +6,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.apache.shiro.authc.IncorrectCredentialsException;
+import org.apache.shiro.authc.UnknownAccountException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -35,6 +37,30 @@ public class LoginController {
 		System.out.println("HomeController.login()");
 		String exception = (String) request.getAttribute("shiroLoginFailure");
 	    System.out.println("exception=" + exception);
+	    String errorMsg = "";
+	    String errorCode = "";
+		if (exception != null) {
+			if (UnknownAccountException.class.getName().equals(exception)) {
+				System.out.println("UnknownAccountException -- > 账号不存在：");
+				errorCode = "invalidPassword";
+				errorMsg = "账号或者密码错误";
+			} else if (IncorrectCredentialsException.class.getName().equals(exception)) {
+				System.out.println("IncorrectCredentialsException -- > 密码不正确：");
+				errorCode = "invalidPassword";
+				errorMsg = "账号或者密码错误：";
+			} else if ("kaptchaValidateFailed".equals(exception)) {
+				System.out.println("kaptchaValidateFailed -- > 验证码错误");
+				errorCode = "invalidYZM";
+				errorMsg = "验证码错误";
+			} else {
+				errorCode = "UnknowError";
+				errorMsg = "else >> "+exception;
+				System.out.println("else -- >" + exception);
+			}
+		}
+		map.put("errorCode", errorCode);
+		map.put("errorMsg", errorMsg);
+	    
 	    return "/login";
 		
 	}
