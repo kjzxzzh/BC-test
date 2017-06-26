@@ -12,6 +12,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.alibaba.fastjson.JSONObject;
@@ -59,6 +60,11 @@ public class CaseController {
 		
 		map.put("pageSum", pageSum);  
 		return map;
+	}
+	
+	@RequestMapping(value="/account/case",method = RequestMethod.GET)
+	public String login() {
+		return "/account/case";
 	}
 	
 }

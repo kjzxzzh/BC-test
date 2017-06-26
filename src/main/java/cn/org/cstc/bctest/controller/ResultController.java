@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class ResultController {
-	@RequestMapping(value = "/account1/showResult")
+	@RequestMapping(value = "/account/showResult")
 	public String showResult(){
 		return "account/showResult";
 	}

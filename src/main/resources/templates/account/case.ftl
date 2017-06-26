@@ -11,12 +11,12 @@
 		<meta name="aplus-rate-ahot-res" content="0.5">
 		<title>username</title>
 		<script type="text/javascript" src="http://ajax.microsoft.com/ajax/jquery/jquery-1.4.min.js"></script>
-		<script src="js/caseRun.js"></script>
-		<script src="js/case.js"></script>
-		<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-		<link rel="stylesheet" type="text/css" href="css/console1412.css">
-		<link rel="stylesheet" type="text/css" href="css/home.css">
-		<link rel="stylesheet" type="text/css" href="css/ladda-themeless.min.css"/>
+		<script src="/js/caseRun.js"></script>
+		<script src="/js/case.js"></script>
+		<link rel="stylesheet" type="text/css" href="/css/bootstrap.css">
+		<link rel="stylesheet" type="text/css" href="/css/console1412.css">
+		<link rel="stylesheet" type="text/css" href="/css/home.css">
+		<link rel="stylesheet" type="text/css" href="/css/ladda-themeless.min.css"/>
 	</head>
 	<body>
 		<div>
