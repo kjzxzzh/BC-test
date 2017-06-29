@@ -1,4 +1,4 @@
-package cn.org.cstc.bctest.controller;
+package cn.org.cstc.bctest.controller.account;
 
 import java.io.IOException;
 import java.util.concurrent.CopyOnWriteArraySet;

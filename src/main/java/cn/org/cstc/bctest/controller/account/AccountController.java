@@ -1,4 +1,4 @@
-package cn.org.cstc.bctest.controller;
+package cn.org.cstc.bctest.controller.account;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
