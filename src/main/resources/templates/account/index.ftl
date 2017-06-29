@@ -70,7 +70,7 @@
 
 														<div class="part-header pull-left">
 
-															<a class="user-header ng-scope" href=""><img src="pape/default_family.jpg" width="50" height="50"> <span class="user-level ng-binding">会员</span></a>
+															<a class="user-header ng-scope" href=""><img src="/pape/default_family.jpg" width="50" height="50"> <span class="user-level ng-binding">会员</span></a>
 
 															<div class="user-name"><span class="text-muted">Hi,</span> <a class="text-primary" href="">Abigail</a></div>
 

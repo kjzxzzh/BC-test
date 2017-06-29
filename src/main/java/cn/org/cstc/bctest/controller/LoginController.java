@@ -5,6 +5,7 @@ import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.validation.constraints.Null;
 
 import org.apache.shiro.authc.IncorrectCredentialsException;
 import org.apache.shiro.authc.UnknownAccountException;
@@ -28,8 +29,10 @@ public class LoginController {
 	private IUserService userService;
 	
 	@RequestMapping(value="/login",method = RequestMethod.GET)
-	public String login() {
-		return "login";
+	public String login(HttpServletRequest request) {
+		String currentUser = (String) request.getSession().getAttribute("currentUser"); 
+		if (currentUser == null) 		return "login";
+		else return "/account/index";
 	}
 
 	@RequestMapping(value="/login",method=RequestMethod.POST)

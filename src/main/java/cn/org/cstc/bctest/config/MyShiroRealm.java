@@ -1,5 +1,6 @@
 package cn.org.cstc.bctest.config;
 
+import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.AuthenticationInfo;
 import org.apache.shiro.authc.AuthenticationToken;
@@ -87,9 +88,8 @@ public class MyShiroRealm extends AuthorizingRealm{
 	                ByteSource.Util.bytes(user.getCredentialsSalt()),//salt=username+salt
 	                getName()  //realm name
 	        );
-	      
-
-	      
+	       SecurityUtils.getSubject().getSession().setAttribute("currentUser", user.getUsername());  
+	      System.out.println("authenticationInfo:"+authenticationInfo);
 	       return authenticationInfo;
 	}
 
