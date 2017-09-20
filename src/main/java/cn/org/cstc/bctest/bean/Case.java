@@ -9,7 +9,7 @@ public class Case {
 	
 	private int  id; //用例idasd 
 	
-	private String case_no;//测试编号
+	private String case_no;//测试编号 q
 	private String case_title;//测试名字
 	private String case_child_project;//测试子项目
 	private String case_requirement_identify;//测试需求
