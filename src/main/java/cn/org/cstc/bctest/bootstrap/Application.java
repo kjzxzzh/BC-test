@@ -11,6 +11,5 @@ public class Application {
     public static void main(String[] args) throws InterruptedException {
     	Object[] sources = {Application.class};
         SpringApplication.run(sources, args);
-        System.out.println("hellonih");
     }
 }
