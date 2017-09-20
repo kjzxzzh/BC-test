@@ -15,17 +15,17 @@ public class CustomFormAuthenticationFilter extends FormAuthenticationFilter{
         HttpSession session = httpServletRequest.getSession();    
     
         // 取出验证码    
-        String validateCode = (String) session.getAttribute("YZM");    
-        
-        // 取出输入的的验证码    
-        String randomcode = httpServletRequest.getParameter("code"); 
-     // 输入的验证和session中的验证进行对比    
-        if (randomcode != null && validateCode != null && !randomcode.equals(validateCode)) {    
-            // 如果校验失败，将验证码错误失败信息，通过shiroLoginFailure设置到request中    
-            httpServletRequest.setAttribute("shiroLoginFailure", "kaptchaValidateFailed");//自定义登录异常    
-            // 拒绝访问，不再校验账号和密码    
-            return true;    
-        }
+//        String validateCode = (String) session.getAttribute("YZM");    
+//        
+//        // 取出输入的的验证码    
+//        String randomcode = httpServletRequest.getParameter("code"); 
+//     // 输入的验证和session中的验证进行对比    
+//        if (randomcode != null && validateCode != null && !randomcode.equals(validateCode)) {    
+//            // 如果校验失败，将验证码错误失败信息，通过shiroLoginFailure设置到request中    
+//            httpServletRequest.setAttribute("shiroLoginFailure", "kaptchaValidateFailed");//自定义登录异常    
+//            // 拒绝访问，不再校验账号和密码    
+//            return true;    
+//        }
         return super.onAccessDenied(request, response);    
     }    
 }

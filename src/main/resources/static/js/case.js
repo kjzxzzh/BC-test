@@ -6,7 +6,7 @@ function getCaseList(page){
 	key = $("#nowKey").val();
 	
 	$.ajax({
-		url: "http://localhost:8080/account/getCaseList",
+		url: "./getCaseList",
 		type: "get",
 		dataType: "html",
 		data: {page:page,key:Nowkey},

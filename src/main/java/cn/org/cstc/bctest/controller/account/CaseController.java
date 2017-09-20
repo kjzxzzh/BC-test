@@ -64,6 +64,7 @@ public class CaseController {
 	
 	@RequestMapping(value="/account/case",method = RequestMethod.GET)
 	public String login() {
+		System.out.println(123);
 		return "/account/case";
 	}
 	

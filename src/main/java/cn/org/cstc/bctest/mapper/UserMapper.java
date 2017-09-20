@@ -15,8 +15,8 @@ public interface UserMapper {
 	public User selectUserById(int id);
 
 	
-	@Insert("insert into user(id,username,mobile,register_time,last_login_time,password,salt,state) "
-			+ "values (#{id}, #{username},#{mobile},#{regesterTime},#{lastLoginTime},#{password}),#{salt}),#{state})")
+	@Insert("insert into user(id,username,mobile,regesterTime,lastlogintime,password,salt,state) "
+			+ "values (#{id}, #{username},#{mobile},#{regesterTime},#{lastLoginTime},#{password},#{salt},#{state})")
 	@ResultType(Boolean.class)
 	public boolean InsertUser(User user);
 	
@@ -28,6 +28,6 @@ public interface UserMapper {
 	@ResultType(User.class)
 	public User selectUserByUsername(String userName);
 	
-	@Update("update user set last_login_time = CURRENT_TIMESTAMP() where id = #{id}")
+	@Update("update user set lastlogintime = CURRENT_TIMESTAMP() where id = #{id}")
 	public void updateLoginTime(int id);
 }

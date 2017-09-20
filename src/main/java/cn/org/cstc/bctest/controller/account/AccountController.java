@@ -9,6 +9,5 @@ public class AccountController {
 	public String index(){
 		return "account/index";
 	}
-	
 
 }

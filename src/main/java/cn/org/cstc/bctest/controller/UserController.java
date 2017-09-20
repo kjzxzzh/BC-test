@@ -9,6 +9,9 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.apache.ibatis.annotations.Param;
+import org.apache.shiro.crypto.SecureRandomNumberGenerator;
+import org.apache.shiro.crypto.hash.Md5Hash;
+import org.apache.shiro.crypto.hash.SimpleHash;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -45,16 +48,28 @@ public class UserController {
 		){
 		ModelAndView modelAndView = null;
 		//判断验证码是否正确
-		String sessesionYZM = (String) session.getAttribute("YZM");
-		if(code==null||(code!=null && !code.equals(sessesionYZM))){
-			modelAndView = new ModelAndView(new RedirectView("register"));
-			
-			attributes.addFlashAttribute("errorCode", "invalidYZM");
-			attributes.addFlashAttribute("errorMsg","验证码错误！");
-			
-			return modelAndView;
-		}
-		
+//		String sessesionYZM = (String) session.getAttribute("YZM");
+//		if(code==null||(code!=null && !code.equals(sessesionYZM))){
+//			modelAndView = new ModelAndView(new RedirectView("register"));
+//			
+//			attributes.addFlashAttribute("errorCode", "invalidYZM");
+//			attributes.addFlashAttribute("errorMsg","验证码错误！");
+//			
+//			return modelAndView;
+//		}
+
+		/*
+		 * 密码盐
+		 */
+    	user.setSalt(new SecureRandomNumberGenerator().nextBytes().toHex());
+    	SimpleHash hash = new SimpleHash("md5", user.getPassword(), user.getCredentialsSalt(), 2);  
+    	String encodedPassword = hash.toHex();   
+    	user.setPassword(encodedPassword);
+    	
+        /*
+         * TODO
+         * 加入用户权限权限
+         */
 		if (userService.saveUser(user) == -1) {// -1 表示用户名已存在
 			modelAndView = new ModelAndView(new RedirectView("register"));
 			attributes.addFlashAttribute("errorCode", "existName");
@@ -62,6 +77,8 @@ public class UserController {
 			return modelAndView;
 		}
 		
+        
+        
 		session.setAttribute("user", user);
 		modelAndView = new ModelAndView(new RedirectView("account/index"));
 		return modelAndView;

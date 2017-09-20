@@ -3,7 +3,7 @@ function yzm(){
 }
 
 function validate () {    
-	var userName = $("#userName").val();
+	var userName = $("#username").val();
 	var password = $("#password").val();
 	var passwordConfirm = $("#passwordConfirm").val();
 	var checkCode = $("#code").val();	

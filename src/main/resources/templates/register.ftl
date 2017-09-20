@@ -23,7 +23,7 @@
                       	<div class="login-b-b" style="height: 320px;">
                       		<ul>
                       			<li>
-                      				<label for="userName" >用&nbsp;&nbsp;户&nbsp;&nbsp;名：</label><input type="text" id="userName" name="userName"/>
+                      				<label for="username" >用&nbsp;&nbsp;户&nbsp;&nbsp;名：</label><input type="text" id="username" name="username"/>
                       				<h1 id="m-tip"><#if errorCode?? && errorCode == 'existName'>${errorMsg}</#if></h1>
                       			</li>
                       			<li>
