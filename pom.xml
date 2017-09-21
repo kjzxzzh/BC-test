@@ -129,6 +129,7 @@
 	
 	
 	<build>
+	<defaultGoal>compile</defaultGoal>
 		<plugins>
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
