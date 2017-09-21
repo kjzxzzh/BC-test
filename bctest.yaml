@@ -12,12 +12,6 @@ spec:
         app: bctest4
     spec:
       containers:
-      - name: uni-jar
-        image: kjzxzzh/bctestjar
-        imagePullPolicy: IfNotPresent
-        ports:
-        - containerPort: 8080
-          hostPort: 33006
       - name: uni-mysql 
         image: kjzxzzh/bctestmysql
         imagePullPolicy: IfNotPresent
@@ -32,5 +26,10 @@ spec:
           value: "123456"
         - name: MYSQL_USER
           value: root
-
+      - name: uni-jar
+        image: kjzxzzh/bctestjar
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8080
+          hostPort: 33006
 
