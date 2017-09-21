@@ -10,7 +10,7 @@ import org.springframework.context.annotation.ComponentScan;
 public class Application {
     public static void main(String[] args) throws InterruptedException {
     	Object[] sources = {Application.class};
-    	System.out.println("version3");
+    	System.out.println("version4");
         SpringApplication.run(sources, args);
         
     }
