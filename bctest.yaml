@@ -1,0 +1,36 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: bctest4
+spec:
+  replicas: 1
+  selector:
+    app: bctest4
+  template:
+    metadata:
+      labels:
+        app: bctest4
+    spec:
+      containers:
+      - name: uni-jar
+        image: kjzxzzh/bctestjar
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8080
+          hostPort: 33006
+      - name: uni-mysql 
+        image: kjzxzzh/bctestmysql
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 3306
+        env:
+        - name: MYSQL_DATABASE
+          value: bc-test
+        - name: MYSQL_PASSWORD
+          value: "123456"
+        - name: MYSQL_ROOT_PASSWORD
+          value: "123456"
+        - name: MYSQL_USER
+          value: root
+
+
